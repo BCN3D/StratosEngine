@@ -598,7 +598,7 @@ void GCodeExport::resetExtrusionValue()
         extruded_volume_at_retraction -= current_extruded_volume;
     }
     current_e_value = 0.0;
-    extruder_attr[current_extruder].retraction_e_amount_at_e_start = extruder_attr[current_extruder].retraction_e_amount_current;
+    extruder_attr[current_extruder].retraction_e_amount_at_e_start = 0;
 }
 
 void GCodeExport::writeDelay(const Duration& time_amount)
