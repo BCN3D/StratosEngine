@@ -581,7 +581,7 @@ void FffGcodeWriter::processStartingCode(const SliceDataStorage& storage, const 
     }
 
     Application::getInstance().communication->sendCurrentPosition(gcode.getPositionXY());
-    gcode.startExtruder(start_extruder_nr);
+    //gcode.startExtruder(start_extruder_nr);
 
     if (gcode.getFlavor() == EGCodeFlavor::BFB)
     {
