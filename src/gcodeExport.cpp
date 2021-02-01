@@ -1044,7 +1044,7 @@ void GCodeExport::switchExtruder(size_t new_extruder, const RetractionConfig& re
     {
         constexpr bool force = true;
         constexpr bool extruder_switch = true;
-        writeRetraction(retraction_config_old_extruder, force, extruder_switch);
+        //writeRetraction(retraction_config_old_extruder, force, extruder_switch);
     }
 
     if (perform_z_hop > 0)
