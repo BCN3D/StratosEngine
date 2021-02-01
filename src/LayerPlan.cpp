@@ -1524,7 +1524,7 @@ void LayerPlan::writeGCode(GCodeExport& gcode)
             }
 
             const double extra_prime_amount = extruder.settings.get<bool>("retraction_enable") ? extruder.settings.get<double>("switch_extruder_extra_prime_amount") : 0;
-            //gcode.addExtraPrimeAmount(extra_prime_amount);
+            gcode.addExtraPrimeAmount(extra_prime_amount);
         }
         else if (extruder_plan_idx == 0)
         {
@@ -1539,7 +1539,7 @@ void LayerPlan::writeGCode(GCodeExport& gcode)
                 // only do the retract if the paths are not spiralized
                 if (!mesh_group_settings.get<bool>("magic_spiralize"))
                 {
-                    gcode.writeRetraction(retraction_config);
+                    //gcode.writeRetraction(retraction_config);
                 }
             }
         }
