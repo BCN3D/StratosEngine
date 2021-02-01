@@ -91,7 +91,7 @@ private:
         std::deque<double> extruded_volume_at_previous_n_retractions; // in mm^3
 
         ExtruderTrainAttributes()
-        : is_primed(false)
+        : is_primed(true)
         , is_used(false)
         , extruderCharacter(0)
         , filament_area(0)
