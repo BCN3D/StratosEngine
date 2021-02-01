@@ -1539,7 +1539,7 @@ void LayerPlan::writeGCode(GCodeExport& gcode)
                 // only do the retract if the paths are not spiralized
                 if (!mesh_group_settings.get<bool>("magic_spiralize"))
                 {
-                    //gcode.writeRetraction(retraction_config);
+                    gcode.writeRetraction(retraction_config);
                 }
             }
         }
@@ -1564,7 +1564,7 @@ void LayerPlan::writeGCode(GCodeExport& gcode)
             if (path.perform_prime)
             {
                 gcode.writePrimeTrain(extruder.settings.get<Velocity>("speed_travel"));
-                gcode.writeRetraction(retraction_config);
+                //gcode.writeRetraction(retraction_config);
             }
 
             if (!path.retract && path.config->isTravelPath() && path.points.size() == 1 && path.points[0] == gcode.getPositionXY() && z == gcode.getPositionZ())
