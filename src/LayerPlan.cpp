@@ -1524,7 +1524,7 @@ void LayerPlan::writeGCode(GCodeExport& gcode)
             }
 
             const double extra_prime_amount = extruder.settings.get<bool>("retraction_enable") ? extruder.settings.get<double>("switch_extruder_extra_prime_amount") : 0;
-            gcode.addExtraPrimeAmount(extra_prime_amount);
+            //gcode.addExtraPrimeAmount(extra_prime_amount);
         }
         else if (extruder_plan_idx == 0)
         {
