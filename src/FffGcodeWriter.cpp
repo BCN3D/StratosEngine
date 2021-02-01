@@ -611,7 +611,7 @@ void FffGcodeWriter::processStartingCode(const SliceDataStorage& storage, const 
             gcode.resetExtrusionValue();
 
             // retract before first travel move
-            gcode.writeRetraction(storage.retraction_config_per_extruder[start_extruder_nr]);
+            //gcode.writeRetraction(storage.retraction_config_per_extruder[start_extruder_nr]);
         }
     }
     gcode.setExtruderFanNumber(start_extruder_nr);
