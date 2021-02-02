@@ -874,8 +874,15 @@ void GCodeExport::writeUnretractionAndPrime()
 void GCodeExport::setRetraction(const RetractionConfig& config)
 {
     ExtruderTrainAttributes& extr_attr = extruder_attr[current_extruder];
-    
-    extr_attr.retraction_e_amount_current = mmToE(config.distance);
+
+    double old_retraction_e_amount = extr_attr.retraction_e_amount_current;
+    double new_retraction_e_amount = mmToE(config.distance);
+    double retraction_diff_e_amount = old_retraction_e_amount - new_retraction_e_amount;
+
+    current_e_value += retraction_diff_e_amount;
+
+    extr_attr.retraction_e_amount_current = new_retraction_e_amount;
+    extr_attr.prime_volume += config.prime_volume;
 }
 
 void GCodeExport::writeRetraction(const RetractionConfig& config, bool force, bool extruder_switch)
