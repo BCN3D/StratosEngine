@@ -871,6 +871,13 @@ void GCodeExport::writeUnretractionAndPrime()
     }
 }
 
+void GCodeExport::setRetraction(const RetractionConfig& config)
+{
+    ExtruderTrainAttributes& extr_attr = extruder_attr[current_extruder];
+    
+    extr_attr.retraction_e_amount_current = mmToE(config.distance);
+}
+
 void GCodeExport::writeRetraction(const RetractionConfig& config, bool force, bool extruder_switch)
 {
     ExtruderTrainAttributes& extr_attr = extruder_attr[current_extruder];

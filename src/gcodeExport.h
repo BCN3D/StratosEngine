@@ -100,7 +100,7 @@ private:
         , waited_for_temperature(false)
         , initial_temp(0)
         , retraction_e_amount_current(0.0)
-        , retraction_e_amount_at_e_start(10.0)
+        , retraction_e_amount_at_e_start(0.0)
         , prime_volume(0.0)
         , last_retraction_prime_speed(0.0)
         , fan_number(0)
@@ -426,6 +426,7 @@ public:
      */
     void writeUnretractionAndPrime();
     void writeRetraction(const RetractionConfig& config, bool force = false, bool extruder_switch = false);
+    void setRetraction(const RetractionConfig& config);
 
     /*!
      * Start a z hop with the given \p hop_height.

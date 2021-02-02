@@ -1565,6 +1565,7 @@ void LayerPlan::writeGCode(GCodeExport& gcode)
             {
                 gcode.writePrimeTrain(extruder.settings.get<Velocity>("speed_travel"));
                 //gcode.writeRetraction(retraction_config);
+                gcode.setRetraction(retraction_config);
             }
 
             if (!path.retract && path.config->isTravelPath() && path.points.size() == 1 && path.points[0] == gcode.getPositionXY() && z == gcode.getPositionZ())
