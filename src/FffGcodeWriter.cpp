@@ -558,7 +558,7 @@ void FffGcodeWriter::processStartingCode(const SliceDataStorage& storage, const 
         gcode.writeCode(prefix.c_str());
     }
 
-    gcode.writeComment("Generated with StatosEngine " VERSION);
+    gcode.writeComment("Generated with StratosEngine " VERSION);
 
     if (gcode.getFlavor() == EGCodeFlavor::GRIFFIN)
     {

@@ -578,7 +578,7 @@ void Wireframe2gcode::processStartingCode()
         gcode.writeCode(prefix.c_str());
     }
 
-    gcode.writeComment("Generated with StatosEngine " VERSION);
+    gcode.writeComment("Generated with StratosEngine " VERSION);
 
     if (gcode.getFlavor() != EGCodeFlavor::ULTIGCODE && gcode.getFlavor() != EGCodeFlavor::GRIFFIN)
     {
